@@ -49,14 +49,16 @@ public class Factorial {
 			 }
 
 		 }catch (NumberFormatException ignored){
+			 //Exception means invalid input (non int),
+			 //This should result in the same error message as invalid input (out of range)
+			 //So fallthrough try/catch block to default error case
 		 }
 
 		 //Fallthrough means invalid input (non-int or out of range)
 		 this.printStream.print("Invalid entry. Please enter an integer between 1 and 10, inclusive.");
 
-
-
-		return -1;
+		 //Return error marker of -1
+		 return -1;
 
 		//YOUR CODE ENDS HERE
 		 
@@ -75,16 +77,11 @@ public class Factorial {
 		int result = 1;
 		//YOUR CODE STARTS HERE
 
-		 //Num != 0 because 0! is 1, base case
-		 if (num != 0){
-
-			 //Starting with result = 1, multiply by i, then increment. Stops at num (inclusive)
-			 //1*1*2*...*(num-1)*num STOP
-			 for (int i = 1; i <= num; i++){
-				 result *= i;
-			 }
+		 //Starting with result = 1, multiply by i, then increment. Stops at num (inclusive)
+		 //1*1*2*...*(num-1)*num STOP
+		 for (int i = 1; i <= num; i++){
+			 result *= i;
 		 }
-
 
 		//YOUR CODE ENDS HERE
 		this.printStream.print("The Factorial is: " + result);		
